@@ -1,7 +1,8 @@
 <table class="table table-striped table-hover">
     <thead>
         <tr>
-            <th> <a href="" ng-click="sort()" \>Title({{sortdirection}})</th>
+            <th> <a href="" ng-click="sort('title')" \>Title({{sortdirection}})</th>
+            <th> <a href="" ng-click="sort('release')" \>Release({{sortdirection}})</th>
         </tr>
     </thead>
     <tbody>
@@ -11,6 +12,12 @@
                     {{movie.title}}
                 </a>
             </td>
+            <td>
+                <a href="#" ng-href="/movies/{{movie.id}}">
+                    {{movie.release}}
+                </a>
+            </td>
+
             <td>
                 <a href="https://twitter.com/intent/tweet?button_hashtag={{toHashtag(movie.title)}}&text=Check%20out%20this%20stunning%20movie" class="twitter-hashtag-button" data-related="MovieDatabase" data-dnt="true">Tweet #{{toHashtag(movie.title)}}</a>
             </td>
