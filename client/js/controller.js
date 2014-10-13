@@ -9,6 +9,30 @@ function AppCtrl ($scope) {
     'use strict';
     $scope.title = 'The Movie Database';
     $scope.searchText = '';
+
+    $scope.predicateSetting = 'title';
+    $scope.predicate = '';
+    $scope.sortdirection = 'Z-A';
+
+    var predicateSetting;
+    var asc = false;
+    $scope.sort = function () {
+        asc = !asc;
+
+        if(asc){
+            $scope.predicate = predicateSetting;
+            $scope.sortdirection = 'A-Z';
+        } else {
+            $scope.predicate = '-' + predicateSetting;
+            $scope.sortdirection = 'Z-A';
+        }
+    };
+
+    $scope.changePredicate = function(predicate){
+        predicateSetting = predicate;
+        $scope.sort();
+    };
+    $scope.changePredicate('title');
 }
 
 function WelcomeCtrl () {
@@ -21,19 +45,9 @@ function MoviesListCtrl ($scope, $location, moviesResponse) {
         $location.path('/movies/new');
     };
 
-    $scope.sort = function () {
-        if($scope.predicate ==='title'){
-            $scope.predicate = '-title';
-            $scope.sortdirection = 'Z-A';
-        } else {
-            $scope.predicate = 'title';
-            $scope.sortdirection = 'A-Z';
-        }
-
-    };
-    $scope.predicate = '-title';
-    $scope.sortdirection = 'Z-A';
-
+    if ($scope.changePredicate !== undefined){
+        $scope.changePredicate('title');
+    }
 }
 
 MoviesListCtrl.resolve = {

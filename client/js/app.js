@@ -5,7 +5,12 @@
   MoviesAddCtrl:false,
   MovieDetailCtrl:false,
   MovieEditCtrl:false,
-  ErrorCtrl:false */
+  ErrorCtrl:false,
+  ActorAddCtrl:false,
+  ActorDetailCtrl:false,
+  ActorListCtrl:false,
+  ActorEditCtrl:false,
+  */
 
 angular.module('MovieDatabase', ['ngRoute']).config(
         function ($routeProvider, $locationProvider, $httpProvider) {
@@ -35,6 +40,25 @@ angular.module('MovieDatabase', ['ngRoute']).config(
         controller: MovieEditCtrl,
         resolve: MovieEditCtrl.resolve,
         templateUrl: '/partial/movies/edit.html'
+    })
+    .when('/actors/new', {
+        controller: ActorAddCtrl,
+        templateUrl: '/partial/actors/add.html'
+    })
+    .when('/actors', {
+        controller: ActorListCtrl,
+        resolve: ActorListCtrl.resolve,
+        templateUrl: '/partial/actors.html'
+    })
+    .when('/actors/:id/edit', {
+        controller: ActorEditCtrl,
+        resolve: ActorEditCtrl.resolve,
+        templateUrl: '/partial/actors/edit.html'
+    })
+    .when('/actors/:id', {
+        controller: ActorDetailCtrl,
+        resolve: ActorDetailCtrl.resolve,
+        templateUrl: '/partial/actors/detail.html'
     })
     .when('/404', {
         controller: NotFoundCtrl,

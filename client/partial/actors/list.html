@@ -1,0 +1,16 @@
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th> <a href="" ng-click="sort()" \>Actor({{sortdirection}})</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="actor in actors | filter:appCtrl.searchText | orderBy:predicate">
+            <td>
+                <a href="#" ng-href="/actors/{{actor.id}}">
+                    {{actor.name}}
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>
