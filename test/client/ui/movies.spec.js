@@ -76,7 +76,7 @@ describe('Movies', function() {
 
         movieOverview.open();
         movieOverview.movieTitles.then(function(elements) {
-            expect(elements.length).toEqual(6);
+            expect(elements.length).toEqual(12);
         });
     }, 60000);
 });

@@ -48,6 +48,9 @@ function MoviesListCtrl ($scope, $location, moviesResponse) {
     if ($scope.changePredicate !== undefined){
         $scope.changePredicate('title');
     }
+    $scope.toHashtag = function ($title){
+        return $title.replace(/ /g,'').replace(/:/g,'').toLowerCase();
+    };
 }
 
 MoviesListCtrl.resolve = {
