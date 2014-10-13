@@ -13,17 +13,26 @@ function AppCtrl ($scope) {
 function WelcomeCtrl () {
 }
 
-function MoviesListCtrl ($scope, $filter, $location, moviesResponse) {
+function MoviesListCtrl ($scope, $location, moviesResponse) {
     'use strict';
-    var orderBy = $filter('orderBy');
     $scope.movies = moviesResponse.data;
     $scope.add = function () {
         $location.path('/movies/new');
     };
-    $scope.sort = function(predicate) {
-        $scope.movies = orderBy($scope.movies, predicate);
+
+    $scope.sort = function () {
+        if($scope.predicate ==='title'){
+            $scope.predicate = '-title';
+            $scope.sortdirection = 'Z-A';
+        } else {
+            $scope.predicate = 'title';
+            $scope.sortdirection = 'A-Z';
+        }
+
     };
-    $scope.sort('title');
+    $scope.predicate = '-title';
+    $scope.sortdirection = 'Z-A';
+
 }
 
 MoviesListCtrl.resolve = {
