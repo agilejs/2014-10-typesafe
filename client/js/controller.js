@@ -31,9 +31,11 @@ function MoviesListCtrl ($scope, $location, moviesResponse) {
         }
 
     };
+    $scope.toHashtag = function ($title){
+        return $title.replace(/ /g,'').replace(/:/g,'').toLowerCase();
+    };
     $scope.predicate = '-title';
     $scope.sortdirection = 'Z-A';
-
 }
 
 MoviesListCtrl.resolve = {
