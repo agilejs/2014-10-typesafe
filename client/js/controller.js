@@ -19,6 +19,20 @@ function MoviesListCtrl ($scope, $location, moviesResponse) {
     $scope.add = function () {
         $location.path('/movies/new');
     };
+
+    $scope.sort = function () {
+        if($scope.predicate ==='title'){
+            $scope.predicate = '-title';
+            $scope.sortdirection = 'Z-A';
+        } else {
+            $scope.predicate = 'title';
+            $scope.sortdirection = 'A-Z';
+        }
+
+    };
+    $scope.predicate = '-title';
+    $scope.sortdirection = 'Z-A';
+
 }
 
 MoviesListCtrl.resolve = {
