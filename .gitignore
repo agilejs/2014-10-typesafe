@@ -3,3 +3,12 @@
 /test-results.xml
 node_modules/
 /client/components/
+/client/.idea/.name
+/client/.idea/client.iml
+/client/.idea/encodings.xml
+/client/.idea/misc.xml
+/client/.idea/modules.xml
+/client/.idea/scopes/scope_settings.xml
+/client/.idea/vcs.xml
+/client/.idea/workspace.xml
+/npm-debug.log

@@ -1,3 +1,10 @@
+function HeaderController($scope, $location) {
+	'use strict';
+    $scope.isActive = function (viewLocation) {
+        return viewLocation === $location.path();
+    };
+}
+
 function AppCtrl ($scope) {
     'use strict';
     $scope.title = 'The Movie Database';
@@ -12,6 +19,7 @@ function MoviesListCtrl ($scope, $location, moviesResponse) {
     $scope.add = function () {
         $location.path('/movies/new');
     };
+
     $scope.sort = function () {
         if($scope.predicate ==='title'){
             $scope.predicate = '-title';
