@@ -2,7 +2,6 @@
 
 [![Build Status](https://travis-ci.org/agilejs/2014-10-typesafe.png)](https://travis-ci.org/agilejs/2014-10-typesafe)
 
-
 Another version of the legendary movie database. This time with NodeJS. The app
 is being deployed to Heroku after every push. Feel free to check it out:
 [http://agilejs-typesafe.herokuapp.com/](http://agilejs-typesafe.herokuapp.com/)!
