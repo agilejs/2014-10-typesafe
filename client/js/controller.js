@@ -8,7 +8,7 @@ function HeaderController($scope, $location) {
 function AppCtrl ($scope) {
     'use strict';
     $scope.title = 'The Movie Database';
-    $scope.searchText = "c";
+    $scope.searchText = '';
 }
 
 function WelcomeCtrl () {
