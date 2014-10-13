@@ -11,6 +11,9 @@
                     {{movie.title}}
                 </a>
             </td>
+            <td>
+                <a href="https://twitter.com/intent/tweet?button_hashtag={{toHashtag(movie.title)}}&text=Check%20out%20this%20stunning%20movie" class="twitter-hashtag-button" data-related="MovieDatabase" data-dnt="true">Tweet #{{toHashtag(movie.title)}}</a>
+            </td>
         </tr>
     </tbody>
 </table>
