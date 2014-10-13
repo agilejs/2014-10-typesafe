@@ -1,3 +1,10 @@
+function HeaderController($scope, $location) {
+	'use strict';
+    $scope.isActive = function (viewLocation) {
+        return viewLocation === $location.path();
+    };
+}
+
 function AppCtrl ($scope) {
     'use strict';
     $scope.title = 'The Movie Database';
